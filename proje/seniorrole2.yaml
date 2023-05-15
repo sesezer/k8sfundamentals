@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: SeniorRole2
+rules: 
+  - verbs: ["get", "watch", "list"]
+    resources: ["*"]
+    apiGroups:
+      - ""
