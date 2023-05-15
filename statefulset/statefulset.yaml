@@ -93,7 +93,7 @@ spec:
       name: cassandra-data
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: standard
+      storageClassName: sezerstorage
       resources:
         requests:
           storage: 1Gi

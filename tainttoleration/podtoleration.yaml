@@ -24,7 +24,8 @@ spec:
   containers:
   - name: toleratedcontainer2
     image: ozgurozturknet/k8s
+  - name: sezer
+    image: redis
   tolerations:
-  - key: "platform"
-    operator: "Exists"
-    effect: "NoSchedule"
+  - key: "sezer"
+    operator: "Equal"

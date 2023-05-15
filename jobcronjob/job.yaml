@@ -10,7 +10,7 @@ spec:
   template:
     spec:
       containers:
-      - name: pi
-        image: perl
-        command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+      - name: sezer
+        image: ubuntu
+        command: ["echo","sezer"]
       restartPolicy: Never #OnFailure 

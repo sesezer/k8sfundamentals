@@ -17,11 +17,11 @@ $ cat <<EOF | kubectl apply -f -
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
-  name: ozgurozturk
+  name: sezer
 spec:
   groups:
   - system:authenticated
-  request: $(cat ozgurozturk.csr | base64 | tr -d "\n")
+  request: $(cat sezer.csr | base64 | tr -d "\n")
   signerName: kubernetes.io/kube-apiserver-client
   usages:
   - client auth

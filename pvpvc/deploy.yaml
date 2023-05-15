@@ -9,7 +9,7 @@ stringData:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysqldeployment
+  name: sezer
   labels:
     app: mysql
 spec:
@@ -21,11 +21,12 @@ spec:
     type: Recreate
   template:
     metadata:
+      name: sezer
       labels:
         app: mysql
     spec:
       containers:
-        - name: mysql
+        - name: sezer
           image: mysql
           ports:
             - containerPort: 3306

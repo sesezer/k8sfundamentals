@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rcdeployment
-  labels:
-    team: development
+  name: myapp
 spec:
-  replicas: 3
   selector:
     matchLabels:
-      app: recreate
-  strategy:
-    type: Recreate
+      app: myapp
   template:
     metadata:
       labels:
-        app: recreate
+        app: myapp
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: myapp
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
-        - containerPort: 80
+        - containerPort: <Port>
+      
