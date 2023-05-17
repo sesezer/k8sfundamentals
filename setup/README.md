@@ -10,7 +10,7 @@ https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-ku
 $ multipass launch --name master -c 2 -m 2G -d 10G
 $ multipass launch --name node1 -c 2 -m 2G -d 10G
 ```
-* Master node'a bağlanıp ```sudo hostnamectl set-hostname master``` komutunu girin. node1'e bağlanıp ```sudo hostnamectl set-hostname node1``` komutunu girin.
+* Master node'a bağlanıp ```sudo hostnamectl set-hostname sezer``` komutunu girin. node1'e bağlanıp ```sudo hostnamectl set-hostname node1``` komutunu girin.
 
 **1:** Kernel modulleri aktive ediyor ve swap kapatıyoruz
 
@@ -88,7 +88,7 @@ $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 $ sudo kubeadm config images pull
 
-$ sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=<ip> --control-plane-endpoint=<ip>
+$ sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=192.168.1.117 --control-plane-endpoint=192.168.1.117
 ```
 
 ```
@@ -104,5 +104,5 @@ $ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25
 
 ```
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
-kubectl taint nodes --all node-role.kubernetes.io/master-
+kubectl taint nodes --all node-role.kubernetes.io/sezer-
 ```

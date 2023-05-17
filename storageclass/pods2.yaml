@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sezer2
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: sezer2
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    volumeMounts:
+      - mountPath: /sezer
+        name: sezervol
+  volumes:
+    - name: sezervol
+      persistentVolumeClaim:
+        claimName: sezer

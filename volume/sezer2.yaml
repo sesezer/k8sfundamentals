@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sezer2
+  labels:
+    name2: myapp
+spec:
+  containers:
+  - name: sezer2
+    image: nginx
+    volumeMounts:
+          - mountPath: /usr/source/nginx/html
+            name: deneme2
+      
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  volumes:
+    - name: deneme2
+      hostPath:
+        path: /home

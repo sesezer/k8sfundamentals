@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sezer
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 5G
+  accessModes:
+    - ReadWriteOnce
+

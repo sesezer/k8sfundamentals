@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "kubernetes://schema/v1@pod": "file:///home/sezer/k8sfundamentals/pod/podeneme.yaml"
+    }
+}
